@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <title>Home page</title>
+</head>
+
+<body class="bg-light container">
+    <header class="text-center mt-5">
+        <h1>Welcome To Facebook</h1>
+    </header>
+
+    <main>
+        <div class="new-feed">
+            <form class="text-center" action="/postFeed" method="post">
+                <p>Name:</p>
+                <input type="text" name="name" required>
+                <% if(mes.length>0){ %>
+                    <p class="card-text"><small class="text-muted"><%= mes %> </small></p>
+                <% } %> 
+                <p>Message:</p>
+                <textarea name="message" id="message" cols="30" rows="10" required></textarea><br>
+                <button class="btn btn-primary">Save</button>
+            </form>
+        </div>
+
+        <% if(data.length>=0){ %>
+            <% for(let i=data.length-1;i>=0;i--){ %>
+                <div class="feed mt-5">
+
+                    <div class="left-side">
+                        <h3 class="title">
+                            <%= data[i].name %>
+                        </h3>
+                        <p class="feed body">
+                            <%= data[i].message %>
+                        </p>
+                    </div>
+                    <div class="right-side">
+                        <a href="/feed/<%= data[i]._id %> ">See More</a>
+                        <p>
+                            <%= data[i].date %>
+                        </p>
+                    </div>
+
+                </div>
+                <% }}else{ %>
+                    <h3>no feeds yet</h3>
+                    <% } %>
+    </main>
+</body>
+
+</html>

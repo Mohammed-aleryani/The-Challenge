@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <title>One Feed</title>
+</head>
+<body class="container bg-light text-center">
+    <header>
+        <h1>Welcome To Facebook</h1>
+    </header>
+    <main>
+        <div class="feed mt-5">
+
+            <div class="left-side">
+                <h3 class="title">
+                    <%= data.name %>
+                </h3>
+                <p class="feed body">
+                    <%= data.message %>
+                </p>
+            </div>
+            <div class="right-side">
+                <p>
+                    <%= data.date %>
+                </p>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="/deletPost/<%=data._id %> "><button class="btn btn-danger">Delete</button></a>
+            <a href="/feed/edit/<%=data._id %> "><button class="btn btn-primary">Edit Post</button></a>
+        </div>
+    </main>
+</body>
+</html>

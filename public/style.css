@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 20px;
+}
+
+header{
+  
+    display: flex;
+    justify-content: space-around;
+}
+
+main{
+    margin: 30px;
+    
+
+}
+.feed{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+textarea{
+    width: 80%;
+}
+
+.buttons{
+    float:right;
+}
+
+.buttons a{
+    display: block;
+    margin-top:10px ;
+   
+}
